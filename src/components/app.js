@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import moment from "moment";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -15,13 +14,10 @@ import NoMatch from "./pages/no-match";
 export default class App extends Component {
   render() {
     return (
-      <div className="app">
+      <div className="container">
         <Router>
           <div>
-            <h1>Adrian Matos' Portfolio </h1>
-            <div>{moment().format("YYYY-MM-DD,h:mm:a")}</div>
             <NavigationContainer />
-
             <Switch>
               <Route exact path="/" component={home} />
               <Route path="/about-me" component={about} />
