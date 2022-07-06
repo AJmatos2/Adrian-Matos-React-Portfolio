@@ -7,6 +7,19 @@
     display: flex;
   }
 
+  &-right-side {
+    a {
+      cursor: pointer;
+      margin-left: 15px;
+      color: $teal;
+      transition: 0.5s ease-in-out;
+    }
+
+    &:hover {
+      color: $dark-teal;
+    }
+  }
+
   .nav-link-wrapper {
     height: 22px;
     border-bottom: 1px solid transparent;
