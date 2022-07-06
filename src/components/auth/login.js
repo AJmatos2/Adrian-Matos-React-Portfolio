@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Login extends Component {
   constructor(props) {
@@ -48,7 +49,7 @@ export default class Login extends Component {
         this.setState({
           errorText: "an error occurred",
         });
-        this.props.handleSuccessfulAuth();
+        this.props.handleUnsuccessfulAuth();
       });
     event.preventDefault();
   }
@@ -60,25 +61,30 @@ export default class Login extends Component {
 
         <div>{this.state.errorText}</div>
 
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email Address"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-
-          <input
-            type="password"
-            name="password"
-            placeholder="Your Password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
-          <div>
-            <button type="submit"> Login </button>
+        <form onSubmit={this.handleSubmit} className="auth-form-wrapper">
+          <div className="form-group">
+            <FontAwesomeIcon icon="envelope" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email Address"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
           </div>
+          <div className="form-group">
+            <FontAwesomeIcon icon="lock" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Your Password"
+              value={this.state.password}
+              onChange={this.handleChange}
+            />
+          </div>
+          <button type="submit" className="btn">
+            Login
+          </button>
         </form>
       </div>
     );
